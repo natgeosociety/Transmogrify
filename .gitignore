@@ -1,4 +1,14 @@
+# IDE
+*.swp
+
+# Python specific
+.python-version
 *.pyc
+
+# OS
+*DS_Store
+
+# Project specific
 dev.db
 local_settings.py
 media/ugc
@@ -7,7 +17,6 @@ src/
 pip-log.txt
 media/js/*.r*.js
 media/css/*.r*.css
-*DS_Store
 *.egg-info
 transmogrify/tests/testdata/vert_img_*.jpg
 transmogrify/tests/testdata/horiz_img_*.jpg
