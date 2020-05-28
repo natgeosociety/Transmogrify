@@ -227,10 +227,12 @@ def process_url(url, server_name="", document_root=None, check_security=True):
             download_url(external_url, original_file)
         except Exception as e:
             msg = "Error downloading external URL: %s" % e
-            raise Http404(msg)
+            logger.debug(msg)
+            raise Http404("Error downloading external URL.")
     elif original_is_missing:
         msg = "Original file does not exist. %r %r" % (url, original_file, )
-        raise Http404(msg)
+        logger.debug(msg)
+        raise Http404("Original file does not exist.")
     if check_security and action_tuples and not is_valid_security(action_tuples, security_hash):
         raise Http404("Invalid security token.")
     output = {
